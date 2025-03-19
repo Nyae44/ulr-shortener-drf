@@ -1,0 +1,9 @@
+.qodo
+# Environment variables
+.env
+
+# Backup files 
+*.bak 
+
+# Database
+*.sqlite3

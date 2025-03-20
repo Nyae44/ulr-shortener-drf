@@ -1,5 +1,5 @@
-from.django.http import HttpResponseNotFound
-from django.shortcuts import redirect
+from django.http import HttpResponseNotFound
+from django.shortcuts import redirect, render
 from .models import URL
 from rest_framework.decorators import api_view
 from django.http import JsonResponse
@@ -44,3 +44,9 @@ def get_url_stats(request, hash):
         return Response(serializer.data)
     except URL.DoesNotExist:
         return Response({'error':'Short URL not found'}, status=400)
+    
+def simple_ui(request):
+    urls = URL.objects.all()
+    
+    return render(request, 'index.html', {"urls":urls})
+    

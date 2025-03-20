@@ -5,3 +5,4 @@ class URLSerializer(serializers.ModelSerializer):
     class Meta:
         model = URL
         fields = ['hash', 'url', 'visits']
+        
